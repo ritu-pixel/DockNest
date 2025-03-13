@@ -75,14 +75,18 @@ CREATE TABLE students (
     age INT
 );
 ```
+![Screenshot 2025-03-13 144602](https://github.com/user-attachments/assets/19bf39e7-a55e-46f1-a654-896d6d79edc4)
+
 
 ### **6️⃣ Insert Sample Data**
 ```sql
-INSERT INTO students (name, age) VALUES
-('Alice', 22),
-('Bob', 24),
-('Charlie', 23);
+INSERT INTO students (name, City) VALUES
+('Ritu', Mumbai),
+('Aditi', Delhi),
+('Shivam', Bnaglore);
 ```
+![Screenshot 2025-03-13 144614](https://github.com/user-attachments/assets/9939cf3a-f54a-4805-b337-1e7862811f5d)
+
 
 ### **7️⃣ Verify Data**
 ```sql
@@ -111,7 +115,7 @@ CREATE TABLE IF NOT EXISTS students (
     name VARCHAR(100),
     age INT
 );
-INSERT INTO students (name, age) VALUES ('Default User', 20);
+INSERT INTO students (name, City) VALUES ('Default User', 20);
 ```
 
 ### **🔟 Build and Run the Custom PostgreSQL Image**
