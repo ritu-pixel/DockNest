@@ -31,6 +31,7 @@ Instead of using the default `bridge` network, creating a custom bridge network 
    ```
    Containers within `my_custom_bridge` can communicate using container names.
 
+
 ## Network Isolation and Security
 ### Isolating Containers Using Separate Bridge Networks
 If you need to isolate groups of containers, you can create multiple bridge networks:
