@@ -1,76 +1,139 @@
-Dockerized Streamlit Development Environment
-📌 Overview
-This project sets up a Dockerized development environment for Streamlit, a powerful framework for building and deploying interactive web applications in Python. Using Docker, you can develop, test, and run your Streamlit applications in a consistent and isolated environment.
+#  **Dockerized Streamlit Development Environment**  
 
-📁 Folder Structure
-bash
-Copy code
-Dockerized-Streamlit-Development/
-│── .streamlit/                  # Streamlit configuration folder
-│   └── config.toml              # Configuration file for Streamlit UI settings
-│── src/                         # Source code directory
-│   └── main.py                  # Main Streamlit application file
-│── Images/                      # Folder for storing images/screenshots
-│── Dockerfile                   # Docker configuration file
-│── requirements.txt              # Python dependencies
-│── README.md                     # Documentation file
-🛠️ Prerequisites
-Before you begin, ensure you have:
+This guide helps you set up a **Streamlit application** inside a **Docker container** for an efficient and portable development experience. 🚀  
 
-Docker installed → Download Docker
-Git installed → Download Git
-🚀 Setup & Installation
-✅ Step 1: Clone the Repository
-Run the following command to clone this repository:
+---
 
-bash
-Copy code
-git clone https://github.com/ritu-pixel/DockNest.git
-cd DockNest/Dockerized-Streamlit-Development
-✅ Step 2: Build the Docker Image
-To create a Docker image for your Streamlit application, run:
+##  **Prerequisites**  
+Before setting up the environment, ensure you have the following installed on your machine:  
 
-bash
-Copy code
-docker build -t streamlit-app .
-✅ Step 3: Run the Streamlit App
-Once the image is built, start a container using:
+🔹 **Docker**  (Ensure the Docker daemon is running)  
+🔹 **Python 3.9+**  (Check installation with `python --version`)  
+🔹 **pip**  (Ensure it's up to date with `pip --version`)  
+🔹 **Basic knowledge of Streamlit**   
 
-bash
-Copy code
-docker run -p 8501:8501 streamlit-app
-Now, open http://localhost:8501/ in your browser to access the Streamlit app.
+---
 
-📝 Configuration
-Inside the .streamlit/config.toml file, you can define custom settings for Streamlit, such as:
+##  **Directory Structure**  
 
-toml
-Copy code
+```
+project_root/
+│── .streamlit/
+│   └── config.toml
+│── src/
+│   └── main.py
+│── Dockerfile
+│── requirements.txt
+│── README.md
+```
+![Screenshot 2025-03-19 143005](https://github.com/user-attachments/assets/168870ad-140a-4f93-85e8-9780bf8d905f)
+![Screenshot 2025-03-19 143019](https://github.com/user-attachments/assets/7d8ba107-6d66-4b0b-bdc8-e750d7242fcb)
+![Screenshot 2025-03-19 143032](https://github.com/user-attachments/assets/667f1ec5-e553-4335-bc45-da9b03c987d8)
+
+
+
+---
+
+##  **File Explanations**  
+
+### **1️ `.streamlit/config.toml`**  
+This file configures Streamlit settings for local development.  
+
+```toml
 [server]
 headless = true
-enableCORS = false
-port = 8501
-🛑 Stopping & Removing Containers
-To stop the running container, press CTRL + C.
-To remove all stopped containers:
+runOnSave = true
+fileWatcherType = "poll"
+```
 
-bash
-Copy code
-docker ps -a                # List all containers  
-docker rm <container_id>     # Remove a specific container  
-docker rmi streamlit-app     # Remove the Docker image  
-📷 Screenshots
-You can store screenshots of the running application inside the Images/ folder.
+---
 
-📤 Push to GitHub
-To push your changes, including the Images/ folder, use:
+### **2️ `src/main.py`**  
+This file contains the **core logic** of the Streamlit application, including:  
 
-bash
-Copy code
-git add .
-git commit -m "Added Images folder and updated project"
-git push origin main
-🎯 Conclusion
-This setup provides a fully containerized environment for Streamlit development, ensuring consistency and ease of deployment. 🚀
+🏠 **Home Page** → Introduction to the app.  
+📊 **Data Explorer** → Allows users to upload and inspect CSV files.  
+📈 **Visualization Page** → Generates interactive charts and graphs.  
 
-Let me know if you need any modifications! 😊
+---
+
+### **3️ `Dockerfile`**  
+Defines the containerized environment for Streamlit.  
+
+```dockerfile
+# Use a lightweight Python image
+FROM python:3.9-slim  
+
+# Set working directory
+WORKDIR /app  
+
+# Copy dependencies and install them
+COPY requirements.txt /app/  
+RUN pip install --no-cache-dir -r requirements.txt  
+
+# Copy all project files
+COPY . /app/  
+
+# Expose Streamlit’s default port
+EXPOSE 8501  
+
+# Run the Streamlit app
+CMD ["streamlit", "run", "src/main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+```
+
+---
+
+### **4️ `requirements.txt`**  
+Contains necessary dependencies:  
+
+```text
+streamlit
+pandas
+numpy
+matplotlib
+plotly
+```
+
+---
+
+## ⚡ **Steps to Run the Project**  
+
+### **1️ Navigate to the project directory**  
+```bash
+cd path/to/project_root
+```
+
+### **2️ Build the Docker image**  
+```bash
+docker build -t streamlit-app .
+```
+
+### **3️ Run the container**  
+```bash
+docker run -p 8501:8501 streamlit-app
+```
+![Screenshot 2025-03-19 144424](https://github.com/user-attachments/assets/8c7b2586-5470-4617-b636-fc61a58b7a8d)
+
+### **4️ Open in Browser**  
+🌐 Go to → [http://localhost:8501](http://localhost:8501)  
+
+---
+
+##  **Conclusion**  
+You now have a **fully functional Streamlit environment** running inside Docker! 🚀  
+
+![Screenshot 2025-03-19 144538](https://github.com/user-attachments/assets/7268f73f-a874-4610-93f1-11411d60b026)
+![Screenshot 2025-03-19 144550](https://github.com/user-attachments/assets/82c20b7d-cc51-4d6b-85a3-559cd03c5024)
+![Screenshot 2025-03-19 144602](https://github.com/user-attachments/assets/2cc12418-6f89-4e1c-8349-caee4dc18295)
+
+
+
+
+
+
+💡 **Next Steps:**  
+🔹 Add more features to your Streamlit app.  
+🔹 Deploy the containerized app on **AWS, GCP, or Azure**.  
+🔹 Experiment with **Docker Compose** for multi-container applications.  
+
+🚀 **Happy Coding!** 🐳💙
