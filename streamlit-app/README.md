@@ -184,3 +184,14 @@ This project is open-source.**.
 
 💡 **Happy Coding! 🚀🎉**
 
+## Deploying it on Render
+![Screenshot 2025-03-25 114157](https://github.com/user-attachments/assets/9ba561a9-c8f4-4acf-902b-a575cfaa6aac)
+![Screenshot 2025-03-25 114209](https://github.com/user-attachments/assets/5198de96-0d52-4ad4-9283-751321d5fc33)
+![Screenshot 2025-03-25 114222](https://github.com/user-attachments/assets/0c57de24-5602-4c30-9cea-aa47c0244ac2)
+You can view your app at
+https://docknest-1.onrender.com/
+![image](https://github.com/user-attachments/assets/28593609-ddb7-4fd3-8af7-6a7e4620e0ec)
+
+
+
+
