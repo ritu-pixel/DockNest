@@ -1,10 +1,10 @@
-# 🐍 Python Logging Application with Docker
+#  Python Logging Application with Docker
 
 This project demonstrates how to create a Python application that logs data continuously to a file while running inside a Docker container. The logs are stored persistently in a Docker volume to ensure they remain available even if the container is stopped or removed.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 ```
 .
 ├── app.py            # Python application that generates logs
@@ -20,9 +20,9 @@ Before starting, make sure you have Docker installed on your system.
 
 ---
 
-## 🛠️ Steps to Build and Run the Application
+##  Steps to Build and Run the Application
 
-### 🐍 Step 1: Write the Python Application
+###  Step 1: Write the Python Application
 Create a file named `app.py` with the following content:
 
 ```python
@@ -39,7 +39,7 @@ with open("/data/app.log", "a") as log_file:
 ```
 This script writes a log entry every 5 seconds to `/data/app.log`.
 
-### 🛠️ Step 2: Create a Dockerfile
+###  Step 2: Create a Dockerfile
 Create a file named `Dockerfile` with the following content:
 
 ```dockerfile
@@ -56,7 +56,7 @@ COPY app.py /app/app.py
 CMD ["python", "app.py"]
 ```
 
-### 🚀 Step 3: Build the Docker Image
+###  Step 3: Build the Docker Image
 Run the following command to build the Docker image:
 
 ```bash
@@ -67,7 +67,7 @@ This will create an image named `python-log-app`.
 ![image](https://github.com/user-attachments/assets/fd350fb4-ec34-46be-b12a-f62abf35b900)
 
 
-### 🚀 Step 4: Run the Docker Container with a Volume
+###  Step 4: Run the Docker Container with a Volume
 To ensure logs are persisted, mount a Docker volume and run the container:
 
 ```bash
@@ -79,7 +79,7 @@ docker run -d --name python-log-container -v my-app-data:/data python-log-app
 - `-d`: Runs the container in detached mode.
 - `-v my-app-data:/data`: Mounts the volume `my-app-data` to the `/data` directory inside the container.
 
-### 😨 Step 5: Verify Logs
+###  Step 5: Verify Logs
 1. **Check if the container is running:**
     ```bash
     docker ps
@@ -107,7 +107,7 @@ docker run -d --name python-log-container -v my-app-data:/data python-log-app
     ```
 ![image](https://github.com/user-attachments/assets/87b41d72-1fb9-4f98-a40b-aec44744cd53)
 
-### 🪚 Stopping and Cleaning Up
+###  Stopping and Cleaning Up
 1. **Stop the container:**
     ```bash
     docker stop python-log-container
@@ -132,9 +132,8 @@ docker run -d --name python-log-container -v my-app-data:/data python-log-app
 
 ---
 
-## ⚠️ Notes
+##  Notes
 - The logs are stored persistently in the Docker volume `my-app-data`.
 - You can use `docker volume inspect my-app-data` to locate and analyze the logs on the host system.
-
-🚀 **Happy Logging with Docker!** 🚀
+ **Happy Logging with Docker!** 
 
