@@ -1,5 +1,10 @@
 # Streamlit Application Deployment on Amazon EC2
 
+## Access the Streamlit application at:
+https://docknest-fazewmfro2peqhq3bahmrc.streamlit.app/
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/220930d5-5204-43a0-ac57-364707672f71" />
+
+
 ## 📌 Introduction
 This project demonstrates how to deploy a **Streamlit** application on an **Amazon EC2** instance. Streamlit is a powerful Python framework for building interactive web applications with minimal effort. By hosting it on EC2, we make the application accessible over the internet with a public IP or domain name.
 
