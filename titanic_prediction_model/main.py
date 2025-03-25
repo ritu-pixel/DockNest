@@ -9,10 +9,15 @@ from sklearn.preprocessing import LabelEncoder
 def load_data():
     url = "https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv"
     df = pd.read_csv(url)
+
+    # Convert categorical columns
     df['Sex'] = LabelEncoder().fit_transform(df['Sex'])
     df['Embarked'].fillna('S', inplace=True)
     df['Embarked'] = LabelEncoder().fit_transform(df['Embarked'])
-    df.fillna(df.mean(), inplace=True)
+
+    # Apply mean only to numeric columns
+    df.fillna(df.select_dtypes(include=['number']).mean(), inplace=True)
+
     return df
 
 data = load_data()
@@ -37,11 +42,7 @@ fare = st.slider("Fare", 0, 500, 50)
 embarked = st.selectbox("Port of Embarkation", ['S', 'C', 'Q'])
 
 # Preprocess input data
-if sex == 'Male':
-    sex = 0
-else:
-    sex = 1
-
+sex = 0 if sex == 'Male' else 1
 embarked = {'S': 2, 'C': 0, 'Q': 1}[embarked]
 
 # Predict survival
