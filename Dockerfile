@@ -19,3 +19,5 @@ EXPOSE 8501
 
 # Run the Streamlit app
 CMD ["streamlit", "run", "src/main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
+# For more information, please refer to https://aka.ms/vscode-docker-python
