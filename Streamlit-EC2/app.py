@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import os
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
@@ -19,13 +20,16 @@ def main():
     @st.cache_data
     def load_data():
         try:
-            data = pd.read_csv('mushrooms.csv')
+            file_path = os.path.join(os.path.dirname(__file__), "mushrooms.csv")
+            if not os.path.exists(file_path):
+                return None
+            data = pd.read_csv(file_path)
             label = LabelEncoder()
             for col in data.columns:
                 data[col] = label.fit_transform(data[col])
             return data
-        except FileNotFoundError:
-            st.error("Error: `mushrooms.csv` not found! Please upload the dataset.")
+        except Exception as e:
+            st.error(f"Error loading data: {e}")
             return None
 
     @st.cache_data
@@ -54,9 +58,20 @@ def main():
                 PrecisionRecallDisplay.from_estimator(model, x_test, y_test, ax=ax)
                 st.pyplot(fig)
 
+    # Try loading data from CSV file
     df = load_data()
+
+    # If CSV is missing, allow user to upload it
     if df is None:
-        return  # Stop execution if CSV not found
+        st.error("Error: `mushrooms.csv` not found! Please upload the dataset.")
+        uploaded_file = st.file_uploader("Upload mushrooms.csv", type=["csv"])
+        if uploaded_file is not None:
+            df = pd.read_csv(uploaded_file)
+            label = LabelEncoder()
+            for col in df.columns:
+                df[col] = label.fit_transform(df[col])
+        else:
+            st.stop()  # Stop execution if no dataset is provided
 
     x_train, x_test, y_train, y_test = split(df)
     class_names = ['edible', 'poisonous']
