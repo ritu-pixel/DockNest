@@ -1,7 +1,8 @@
 # ml-pipeline-dashboard/dashboard/requirements.txt
-streamlit==1.25.0
-matplotlib>=3.0.0
+--extra-index-url https://pypi.org/simple/
+matplotlib==3.8.0
 numpy==1.24.4
 pandas==2.0.3
 scikit-learn==1.3.0
 shap==0.42.1
+streamlit==1.25.0
