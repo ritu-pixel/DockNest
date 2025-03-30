@@ -1,0 +1,50 @@
+﻿services:
+  db:
+    build:
+      context: ./db
+    volumes:
+      - ./db/data:/data
+    environment:
+      - SQLITE_DB_PATH=/data/database.db
+
+  etl:
+    build:
+      context: ./etl
+    volumes:
+      - ./db/data:/data
+      - ./visualizations:/visualizations
+    depends_on:
+      - db
+
+  training:
+    build:
+      context: ./training
+    volumes:
+      - ./db/data:/data
+      - ./models:/models
+      - ./reports:/reports
+    depends_on:
+      - etl
+
+  monitoring:
+    build:
+      context: ./monitoring
+    volumes:
+      - ./db/data:/data
+      - ./models:/models
+      - ./reports:/reports
+    depends_on:
+      - training
+
+  dashboard:
+    build:
+      context: ./dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./db/data:/data
+      - ./models:/models
+      - ./reports:/reports
+      - ./visualizations:/visualizations
+    depends_on:
+      - monitoring
