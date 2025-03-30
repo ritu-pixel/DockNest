@@ -1,3 +1,14 @@
+import os
+import sys
+import subprocess
+
+# Force install dependencies if missing
+try:
+    import matplotlib
+except ImportError:
+    subprocess.run([sys.executable, "-m", "pip", "install", "-r", "packages.txt"], check=True)
+    os.execv(sys.executable, [sys.executable] + sys.argv)  # Restart app
+
 import streamlit as st
 import sqlite3
 import pandas as pd
