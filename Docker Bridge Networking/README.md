@@ -47,6 +47,8 @@ To prevent a container from automatically joining the default bridge network, ru
 ```sh
 docker run -d --name isolated_container --network none nginx
 ```
+![Screenshot 2025-02-17 230701](https://github.com/user-attachments/assets/87c198b7-5da5-47a0-899a-85a80c5e7169)
+
 This ensures the container has no network connectivity.
 ![image](https://github.com/user-attachments/assets/a5c2d654-2a37-43b2-9a54-1e51fe8970ac)
 
