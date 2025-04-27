@@ -23,7 +23,8 @@ Inside the container, create a file inside `/data`:
 ```sh
  docker exec -it alpine_with_bind_mount sh -c "echo 'Hello, Docker!' > /data/testfile.txt"
 ```
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/bbe88a31-28a8-46b0-afb5-c537aa6ac467)
+
 
 ### 🔍 **What Happens?**
 - The command runs a shell inside the running container.
