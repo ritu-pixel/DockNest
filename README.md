@@ -59,8 +59,4 @@ Welcome to **DockNest** — a collection of Docker, Streamlit, AWS, and ML mini-
 
 > ⭐ Feel free to explore each project folder for detailed README, Dockerfiles, app code, and deployment instructions!
 
----
 
-> ⭐ Feel free to explore each project folder for detailed README, Dockerfiles, app code, and deployment instructions!
-
----
