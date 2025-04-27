@@ -99,12 +99,7 @@ nohup streamlit run app.py --server.port 8501 --server.address 0.0.0.0 &
 This allows the app to keep running even after logging out.
 
 ---
-## Use Render for deploying your application.
-![Screenshot 2025-03-25 144037](https://github.com/user-attachments/assets/42b10b1b-f13b-4df2-99fc-2388a10b69d7)
-![Screenshot 2025-03-25 144049](https://github.com/user-attachments/assets/8c786bee-2f4c-4fe1-8637-0ddc4691ed08)
-Access it on
-https://docknest-2.onrender.com/
-![image](https://github.com/user-attachments/assets/fb15b66f-4d2e-438a-828b-55851572d8b5)
+
 
 
 
