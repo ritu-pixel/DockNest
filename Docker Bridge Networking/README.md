@@ -48,6 +48,7 @@ To prevent a container from automatically joining the default bridge network, ru
 docker run -d --name isolated_container --network none nginx
 ```
 This ensures the container has no network connectivity.
+![image](https://github.com/user-attachments/assets/a5c2d654-2a37-43b2-9a54-1e51fe8970ac)
 
 ## Connecting Containers to Multiple Networks
 A container can be connected to multiple networks to facilitate controlled communication:
