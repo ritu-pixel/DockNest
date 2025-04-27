@@ -56,6 +56,8 @@ A container can be connected to multiple networks to facilitate controlled commu
 docker network connect bridge_network_A container1
 docker network connect bridge_network_B container2
 ```
+![image](https://github.com/user-attachments/assets/79b49c88-b9f3-464f-8935-bf044dfdadde)
+
 This allows `container1` and `container2` to communicate across `bridge_network_A` and `bridge_network_B`.
 
 ## Exposing a Container to the Host Network
