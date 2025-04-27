@@ -51,6 +51,8 @@ Now, remove the container and check if the file persists:
 ```sh
  docker rm -f alpine_with_bind_mount
 ```
+![image](https://github.com/user-attachments/assets/5867e94a-657e-4a2a-a905-03ec51e6ce6c)
+
 ### 🔍 **What Happens?**
 - The container is **stopped and deleted**.
 - Since `testfile.txt` is inside the **bind-mounted directory**, it **remains on the host**.
@@ -59,11 +61,11 @@ Now, remove the container and check if the file persists:
 ### 🔄 **Step 5: Create a New Container with the Same Bind Mount**
 Start a new container and mount the same folder:
 ```sh
- docker run -dit --name new_alpine -v C:\Users\asus\docker_data:/data alpine sh
+ docker run -dit --name new_alpine -v C:\Users\docker_data:/data alpine sh
 ```
 ### 🔍 **What Happens?**
 - A new container named `new_alpine` is created.
-- The **same** bind-mounted directory (`C:\Users\asus\docker_data`) is mounted to `/data`.
+- The **same** bind-mounted directory (`C:\Users\docker_data`) is mounted to `/data`.
 
 ---
 ### 🔎 **Step 6: Verify File Persistence in the New Container**
@@ -91,6 +93,8 @@ Hello, Docker!
  docker volume create my_data_volume
  docker run -dit --name alpine_with_volume -v my_data_volume:/data alpine sh
 ```
+![image](https://github.com/user-attachments/assets/a4b073d1-6cb8-4c84-99b0-da6fae242a31)
+
 🔹 **Experiment with Different Containers**  
 Mount the same directory in **Ubuntu**:
 ```sh
