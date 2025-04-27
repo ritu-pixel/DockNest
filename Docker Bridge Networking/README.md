@@ -25,6 +25,8 @@ Instead of using the default `bridge` network, creating a custom bridge network 
    docker run -d --name container1 --network my_custom_bridge nginx
    docker run -d --name container2 --network my_custom_bridge alpine sleep 3600
    ```
+   ![Screenshot 2025-02-17 230701](https://github.com/user-attachments/assets/eb1388ee-ff7d-4099-8bbc-0baf281fbb02)
+
 3. **Verify network connectivity:**
    ```sh
    docker network inspect my_custom_bridge
