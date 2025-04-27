@@ -19,11 +19,13 @@ Ensure you have the following installed:
 ```sh
 minikube start --driver=docker
 ```
+![Screenshot 2025-03-22 120608](https://github.com/user-attachments/assets/8ecdd5bb-7bce-422a-a4bb-e2804e321b57)
 
 ### **Step 2: Enable Kubernetes Dashboard (Optional)**
 ```sh
 minikube dashboard
 ```
+![Screenshot 2025-03-22 182109](https://github.com/user-attachments/assets/2c773ace-9a3f-44ba-86fe-011013da9a07)
 
 ### **Step 3: Verify Minikube Status**
 ```sh
@@ -31,6 +33,7 @@ minikube status
 ```
 
 ---
+![Screenshot 2025-03-22 120620](https://github.com/user-attachments/assets/e3145ac2-aace-47f1-b0ba-bfa8bc5154d6)
 
 ## Deploying Microservices
 
@@ -78,6 +81,9 @@ Apply the configurations:
 ```sh
 kubectl apply -f api-gateway-deployment.yml
 ```
+![Screenshot 2025-03-22 182119](https://github.com/user-attachments/assets/af146adb-19f7-46af-8a47-65a4aa64514b)
+![Screenshot 2025-03-22 182132](https://github.com/user-attachments/assets/9182b355-9643-4f21-95cd-9c07a8a72906)
+
 
 ### **Step 2: Verify Deployment and Services**
 Check deployments:
@@ -88,16 +94,21 @@ Check running pods:
 ```sh
 kubectl get pods
 ```
+![Screenshot 2025-03-22 182241](https://github.com/user-attachments/assets/1933a8f3-38d1-48eb-a8f4-8f1f48a42a95)
+
 Check services:
 ```sh
 kubectl get services
 ```
+![Screenshot 2025-03-22 182158](https://github.com/user-attachments/assets/e42277ea-8810-4176-b21a-873ca65e6fe7)
 
 ### **Step 3: Access the API Gateway**
 Run:
 ```sh
 minikube service api-gateway
 ```
+![Screenshot 2025-03-22 182230](https://github.com/user-attachments/assets/3239eb94-5b74-4f67-9f27-a281cb5e26ee)
+
 This will expose the API Gateway and provide a URL.
 
 ---
@@ -161,6 +172,8 @@ Find the pod name using:
 ```sh
 kubectl get pods
 ```
+![Screenshot 2025-03-22 182253](https://github.com/user-attachments/assets/10a06cb9-959c-4f8c-b8a3-46c25bee04ba)
+![Screenshot 2025-03-22 182305](https://github.com/user-attachments/assets/6658de9c-8ef1-4931-bc71-0ebf6ba6db03)
 
 ---
 
@@ -171,6 +184,7 @@ kubectl delete all --all
 minikube stop
 minikube delete
 ```
+![Screenshot 2025-03-22 182329](https://github.com/user-attachments/assets/bda3e399-0fe6-451b-8f44-36afbee195f6)
 
 ---
 
