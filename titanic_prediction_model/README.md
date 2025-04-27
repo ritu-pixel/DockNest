@@ -84,6 +84,9 @@ Follow these steps to build and run the containerized application:
 ```bash
 cd Titanic-Prediction-Model
 ```
+![image](https://github.com/user-attachments/assets/dbd5c6a1-3252-4da0-8161-e7c6a5602d5a)
+![image](https://github.com/user-attachments/assets/8edd94fc-1fb7-45e7-9d8d-53cdd73c59b2)
+
 
 ### **2️ Build the Docker Image**
 ```bash
