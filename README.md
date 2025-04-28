@@ -54,8 +54,9 @@ Welcome to **DockNest** — a collection of Docker, Streamlit, AWS, and ML mini-
 
 - [Titanic Prediction Model](./titanic_prediction_model)  
   🚢 Machine learning model predicting Titanic survival rates.
+-[Streamlit Interactive App](./Streamlit-2)
+  Interactive App
 
----
 
 > ⭐ Feel free to explore each project folder for detailed README, Dockerfiles, app code, and deployment instructions!
 
